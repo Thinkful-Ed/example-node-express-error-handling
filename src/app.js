@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.use("/states/:abbreviation", (req, res, next) => {
+app.get("/states/:abbreviation", (req, res, next) => {
   const abbreviation = req.params.abbreviation;
   if (abbreviation.length !== 2) {
     next("State abbreviation is invalid.");
